@@ -1,0 +1,2 @@
+"test.string" = "Test string";
+"test.substitutions" = "%{count} substitutions";
