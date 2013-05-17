@@ -8,6 +8,7 @@ def convert(file, namespace, value)
   end
 end
 
+desc "Convert YAML translations to Localizable.strings format"
 task :translate do
   require 'i18n'
 
