@@ -1,2 +1,3 @@
 "test.string" = "Test string";
 "test.substitutions" = "%{count} substitutions";
+"test.multiple_substitutions" = "%{count} substitutions %{count}";
