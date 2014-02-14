@@ -11,6 +11,10 @@ describe "I18n" do
     it "should plug in substitutions" do
       I18n.translate("test.substitutions", :count => 5).should == "5 substitutions"
     end
+
+    it "substitutes multiple instances" do
+      I18n.translate("test.multiple_substitutions", :count => 5).should == "5 substitutions 5"
+    end
     
     it "should have shortcut" do
       I18n.t("test.string").should == I18n.translate("test.string")
