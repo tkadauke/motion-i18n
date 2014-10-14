@@ -4,7 +4,8 @@ def convert(file, namespace, value)
       convert(file, "#{namespace}.#{key}", value)
     end
   else
-    file.puts %{"#{namespace}" = "#{value.to_s}";}
+    translation = value.to_s.gsub(/(")/) { |character| "\\#{character}"}
+    file.puts %{"#{namespace}" = "#{translation}";}
   end
 end
 
@@ -14,12 +15,11 @@ task :translate do
 
   files = Dir.glob("config/locales/*.yml")
 
-  I18n.load_path.clear
   I18n.load_path << files
-  
+
   files.each do |locale_file|
     locale = File.basename(locale_file).sub(".yml", "")
-    
+
     all_translations = I18n.backend.send(:lookup, locale.to_sym, "")
     FileUtils.mkdir_p("resources/#{locale}.lproj")
     File.open("resources/#{locale}.lproj/Localizable.strings", 'w') do |file|
