@@ -8,7 +8,7 @@ module I18n
       end
     end
     alias t translate
-  
+
     def locale
       NSLocale.preferredLanguages.first
     end
