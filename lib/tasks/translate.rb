@@ -14,9 +14,9 @@ def droid_convert(file, namespace, value)
       droid_convert(file, "#{namespace}.#{key}", value)
     end
   else
-    encoded_val = value.to_s.gsub("'", "&apos;").gsub('"', "&quot;") #.encode(:xml => :text)
+    encoded_val = value.to_s.gsub("'", "&apos;").gsub('"', "&quot;").encode(:xml => :text)
     encoded_name = namespace.to_s.gsub(" ", "_")
-    file.puts %{<string name="#{encoded_name}">#{encoded_val}</string>}
+    file.puts %{<string name="#{encoded_name}">} + encoded_val + '</string>' # dont interpolate the actual value.
   end
 end
 
