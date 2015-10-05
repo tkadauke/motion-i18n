@@ -11,10 +11,9 @@ end
 def droid_convert(file, namespace, value)
   if value.is_a?(Hash)
     value.each do |key, value|
-      convert(file, "#{namespace}.#{key}", value)
+      droid_convert(file, "#{namespace}.#{key}", value)
     end
   else
-    # file.puts %{"#{namespace}" = "#{value.to_s}";}
     encoded_val = value.to_s.gsub("'", "&apos;").gsub('"', "&quot;").encode(:xml => :text)
     encoded_name = namespace.to_s.gsub(" ", "_")
     file.puts %{<string name="#{encoded_name}">#{encoded_val}</string>}
