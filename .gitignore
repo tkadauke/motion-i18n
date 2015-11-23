@@ -8,3 +8,4 @@ resources/*.storyboardc
 Gemfile.lock
 pkg/*
 .dat*
+.DS_Store
