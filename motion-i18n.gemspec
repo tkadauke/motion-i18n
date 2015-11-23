@@ -1,7 +1,7 @@
 # -*- encoding: utf-8 -*-
 Gem::Specification.new do |s|
   s.name        = "motion-i18n"
-  s.version     = "0.0.5"
+  s.version     = "0.0.6"
   s.authors     = ["Thomas Kadauke"]
   s.email       = ["thomas.kadauke@googlemail.com"]
   s.homepage    = "https://github.com/tkadauke/motion-i18n"
