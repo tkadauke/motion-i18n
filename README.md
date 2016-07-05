@@ -50,6 +50,8 @@ You can get the current locale by calling
 I18n.locale
 ```
 
+Setting the locale is done by changing the language settings on the mobile device or simulator. Setting the locale via code or in the Rakefile will have no effect or generate an error.
+
 ## Workflow
 
 This gem works perfectly together with the `i18n_tools` gem:
